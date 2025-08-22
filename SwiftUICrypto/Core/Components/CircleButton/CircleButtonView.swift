@@ -8,11 +8,28 @@
 import SwiftUI
 
 struct CircleButtonView: View {
+    
+    let iconName: String
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Image(systemName: iconName)
+            .font(.headline)
+            .foregroundColor(.theme.accent)
+            .frame(width: 50, height: 50)
+            .background(
+                Circle()
+                    .foregroundColor(.theme.background)
+            )
+            .shadow(color: .theme.accent.opacity(0.35), radius: 10, x: 0, y: 0)
+            .padding()
     }
 }
 
-#Preview {
-    CircleButtonView()
+#Preview(traits: .sizeThatFitsLayout) {
+    Group {
+        CircleButtonView(iconName: "info")
+        
+        CircleButtonView(iconName: "plus")
+            .colorScheme(.dark)
+    }
 }
