@@ -48,6 +48,7 @@ struct HomeView: View {
     NavigationView {
         HomeView()
             .navigationBarHidden(true)
+            .colorScheme(.dark)
     }
     .environmentObject(PreviewProvider.dev.homeVM)
 }
