@@ -10,9 +10,22 @@
 		4F1FBEE22E58C09A00F4AE8E /* SwiftUICrypto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUICrypto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		4FDB9E712E69BBA800AD03A1 /* Exceptions for "SwiftUICrypto" folder in "SwiftUICrypto" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 4F1FBEE12E58C09A00F4AE8E /* SwiftUICrypto */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		4F1FBEE42E58C09A00F4AE8E /* SwiftUICrypto */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				4FDB9E712E69BBA800AD03A1 /* Exceptions for "SwiftUICrypto" folder in "SwiftUICrypto" target */,
+			);
 			path = SwiftUICrypto;
 			sourceTree = "<group>";
 		};
@@ -256,11 +269,12 @@
 				DEVELOPMENT_TEAM = Z49Q226VX7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SwiftUICrypto/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Crypto Tracker";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -285,11 +299,12 @@
 				DEVELOPMENT_TEAM = Z49Q226VX7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SwiftUICrypto/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Crypto Tracker";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
