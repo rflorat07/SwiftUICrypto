@@ -36,7 +36,7 @@ struct StatisticView: View {
     }
 }
 
-#Preview(traits: .sizeThatFitsLayout) {
+#Preview() {
         StatisticView(stat: PreviewProvider.dev.stat1)
 }
 

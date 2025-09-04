@@ -11,10 +11,10 @@ struct HomeView: View {
     
     @EnvironmentObject private var vm: HomeViewModel
     
+    @State private var selectedCoin: CoinModel? = nil
+    @State private var showDetailView: Bool = false // Detail View
     @State private var showPortfolio: Bool = false // Animate right
     @State private var showPortfolioView: Bool = false // New Sheet
-    
-    
     
     var body: some View {
         ZStack {
@@ -50,6 +50,12 @@ struct HomeView: View {
                 
             } // VStack
         } // ZStack
+        .background(
+            NavigationLink(
+                destination: DetailLoadingView(coin: $selectedCoin),
+                isActive: $showDetailView,
+                label: { EmptyView()})
+        )
     }
 }
 
@@ -95,9 +101,12 @@ extension HomeView {
     
     private var allCointsList: some View {
         List {
-            ForEach(vm.allCoints) { coint in
-                CoinRowView(coin: coint, showHoldingsColumn: false)
+            ForEach(vm.allCoints) { coin in
+                CoinRowView(coin: coin, showHoldingsColumn: false)
                     .listRowInsets(.init(top: 10, leading: 0, bottom: 10, trailing: 10))
+                    .onTapGesture {
+                        segue(coin: coin)
+                    }
             }
         }
         .listStyle(PlainListStyle())
@@ -106,11 +115,19 @@ extension HomeView {
         }
     }
     
+    private func segue(coin: CoinModel) {
+        selectedCoin = coin
+        showDetailView.toggle()
+    }
+    
     private var portfolioCointsList: some View {
         List {
-            ForEach(vm.portfolioCoints) { coint in
-                CoinRowView(coin: coint, showHoldingsColumn: true)
+            ForEach(vm.portfolioCoints) { coin in
+                CoinRowView(coin: coin, showHoldingsColumn: true)
                     .listRowInsets(.init(top: 10, leading: 0, bottom: 10, trailing: 10))
+                    .onTapGesture {
+                        segue(coin: coin)
+                    }
             }
         }
         .listStyle(PlainListStyle())

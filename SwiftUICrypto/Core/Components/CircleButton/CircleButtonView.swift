@@ -25,7 +25,7 @@ struct CircleButtonView: View {
     }
 }
 
-#Preview(traits: .sizeThatFitsLayout) {
+#Preview() {
     Group {
         CircleButtonView(iconName: "info")
         
