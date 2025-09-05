@@ -15,6 +15,7 @@ struct HomeView: View {
     @State private var showDetailView: Bool = false // Detail View
     @State private var showPortfolio: Bool = false // Animate right
     @State private var showPortfolioView: Bool = false // New Sheet
+    @State private var showSettingsView: Bool = false // Settings View
     
     var body: some View {
         ZStack {
@@ -49,6 +50,10 @@ struct HomeView: View {
                 Spacer(minLength: 0)
                 
             } // VStack
+            .sheet(isPresented: $showSettingsView) {
+                SettingsView()
+            }
+            
         } // ZStack
         .background(
             NavigationLink(
@@ -76,6 +81,8 @@ extension HomeView {
                 .onTapGesture {
                     if showPortfolio {
                         showPortfolioView.toggle()
+                    } else {
+                        showSettingsView.toggle()
                     }
                 }
                 .background(
